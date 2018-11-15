@@ -20,3 +20,6 @@ Route::get('/', function () {
 
     return view('auction', compact('players', 'teams'));
 });
+
+Route::resource('teams', 'TeamController');
+Route::resource('players', 'PlayerController');

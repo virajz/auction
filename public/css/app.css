@@ -25,6 +25,19 @@ a {
   display: flex;
 }
 
+#app > * {
+  height: 100vh;
+}
+
+.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .justify-between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -52,7 +65,6 @@ a {
 
 .teams {
   width: 400px;
-  height: 100vh;
   overflow-y: scroll;
 }
 
@@ -82,13 +94,13 @@ ol {
   padding: 0;
   width: 320px;
   border-right: 1px solid #eee;
-  height: 100vh;
   overflow-y: scroll;
 }
 
 ol > li {
   padding-right: 20px;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
 }
 
 li > a {
@@ -108,5 +120,45 @@ li > a.picked {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+.form div {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 200px;
+  border: 1px solid #eee;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+button {
+  border: 0;
+  background-color: #5e93ff;
+  color: #fff;
+  font-size: 1em;
+  width: 100%;
+  padding: 1em 0;
+  outline: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background-color: #2765e5;
 }
 

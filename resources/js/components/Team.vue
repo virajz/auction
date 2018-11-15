@@ -8,7 +8,7 @@
             </div>
             <div class="flex-1">
                 <p>Players Taken</p>
-                <h4>{{ team.players_count }}</h4>
+                <h4 v-text="team.players_count"></h4>
             </div>
         </div>
     </div>
@@ -28,6 +28,13 @@
             pointsRemaining() {
                 return this.team.points - this.team.spent;
             }
+        },
+
+        created () {
+            window.events.$on('player-updated', () => {
+                axios.get('teams/' + this.team.id)
+                    .then(response => (this.team = response.data) );
+            });
         }
     }
 </script>

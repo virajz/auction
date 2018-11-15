@@ -46,7 +46,9 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        //
+        if (request()->wantsJson()) {
+            return $player;
+        }
     }
 
     /**
@@ -69,7 +71,14 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
-        //
+        $player->points = $request->points;
+        $player->team_id = $request->team_id;
+
+        $player->save();
+
+        if ($request->wantsJson()) {
+            return $player;
+        }
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $fillable = ['name', 'team_id', 'points'];
     protected $appends = ['color'];
 
     public function team()
@@ -15,6 +16,8 @@ class Player extends Model
 
     public function getColorAttribute()
     {
-        return $this->team_id ? $this->team->color : '';
+        $color = $this->team_id ? $this->team->color : '';
+
+        return $color;
     }
 }

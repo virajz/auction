@@ -46,7 +46,9 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        if (request()->wantsJson()) {
+            return $team;
+        }
     }
 
     /**
