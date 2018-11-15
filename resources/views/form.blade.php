@@ -1,3 +1,3 @@
 <div class="form flex-1">
-    hi
+    <example-component></example-component>
 </div>

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
+    protected $appends = ['color'];
+
     public function team()
     {
         return $this->belongsTo(Team::class);

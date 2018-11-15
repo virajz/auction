@@ -1,14 +1,91 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+h1, h2, h3, h4, p {
+    margin: 0;
+}
 
-// Variables
-@import 'variables';
+a {
+    text-decoration: none
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.flex {
+    display: flex;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.justify-between {
+    justify-content: space-between;
+    align-items: center
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.teams {
+    width: 400px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.team {
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.team h3 {
+    margin-bottom: 20px;
+}
+
+.team p {
+    margin-bottom: 2px;
+}
+
+.team h4 {
+    font-size: 30px;
+}
+
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 320px;
+    border-right: 1px solid #eee;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+ol>li {
+    padding-right: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+li>a {
+    display: block;
+    color: #636b6f;
+    padding: 10px 20px;
+    border-left-width: 10px;
+    border-left-style: solid;
+}
+
+li>a.picked {
+    color: #ccc
+}
+
+.team-dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
