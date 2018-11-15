@@ -1,6 +1,6 @@
 <template>
     <li class="flex justify-between" @click="selectPlayer">
-        <a href="#" :class="picked" v-text="player.name"></a>
+        <a href="#" :class="picked" :style="{borderLeftColor: bgColor}" v-text="player.name"></a>
         <span class="team-dot" :style="{backgroundColor: bgColor}"></span>
     </li>
 </template>
@@ -27,7 +27,7 @@
             },
 
             bgColor() {
-                return this.player.color;
+                return this.player.team ? this.player.team.color : '';
             }
         },
 

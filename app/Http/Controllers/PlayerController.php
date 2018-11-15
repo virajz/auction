@@ -47,7 +47,7 @@ class PlayerController extends Controller
     public function show(Player $player)
     {
         if (request()->wantsJson()) {
-            return $player;
+            return $player->load('team')->refresh();
         }
     }
 

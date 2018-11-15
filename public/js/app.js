@@ -47650,7 +47650,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.player.team_id ? 'picked' : '';
         },
         bgColor: function bgColor() {
-            return this.player.color;
+            return this.player.team ? this.player.team.color : '';
         }
     },
 
@@ -47681,6 +47681,7 @@ var render = function() {
     [
       _c("a", {
         class: _vm.picked,
+        style: { borderLeftColor: _vm.bgColor },
         attrs: { href: "#" },
         domProps: { textContent: _vm._s(_vm.player.name) }
       }),
