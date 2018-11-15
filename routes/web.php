@@ -1,5 +1,8 @@
 <?php
 
+use App\Player;
+use App\Team;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +15,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $players = Player::oldest('name')->get();
+    $teams = Team::all();
+
+    return view('auction', compact('players', 'teams'));
 });
