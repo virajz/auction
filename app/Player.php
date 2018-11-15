@@ -10,4 +10,9 @@ class Player extends Model
     {
         return $this->belongsTo(Team::class);
     }
+
+    public function getColorAttribute()
+    {
+        return $this->team_id ? $this->team->color : '';
+    }
 }

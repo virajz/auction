@@ -15,8 +15,8 @@ use App\Team;
 */
 
 Route::get('/', function () {
-    $players = Player::oldest('name')->get();
-    $teams = Team::all();
+    $players = Player::with('team')->oldest('name')->get();
+    $teams = Team::with('players')->get();
 
     return view('auction', compact('players', 'teams'));
 });
