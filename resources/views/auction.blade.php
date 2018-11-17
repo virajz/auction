@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('content')
-    @include('players')
-    @include('form')
-    @include('teams')
+    <div class="flex" id="app">
+        @include('players')
+        @include('form')
+        @include('teams')
+    </div>
 @endsection

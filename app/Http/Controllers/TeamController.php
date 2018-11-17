@@ -49,6 +49,8 @@ class TeamController extends Controller
         if (request()->wantsJson()) {
             return $team;
         }
+
+        return view('team', compact('team'));
     }
 
     /**

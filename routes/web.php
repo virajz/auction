@@ -21,5 +21,12 @@ Route::get('/', function () {
     return view('auction', compact('players', 'teams'));
 });
 
+Route::get('/reset', function () {
+    \DB::table('players')->update(['points' => 0, 'team_id' => null]);
+    return redirect('/');
+});
+
 Route::resource('teams', 'TeamController');
 Route::resource('players', 'PlayerController');
+
+Route::get('/export', 'PlayerController@export');

@@ -1,6 +1,6 @@
 <template>
     <div class="team flex-col flex-1" :style="{backgroundColor: team.color}">
-        <h3>{{ team.name }}</h3>
+        <h3><a :href="href" target="_blank">{{ team.name }}</a></h3>
         <div class="flex">
             <div class="flex-1">
                 <p>Points</p>
@@ -27,6 +27,12 @@
         methods: {
             pointsRemaining() {
                 return this.team.points - this.team.spent;
+            }
+        },
+
+        computed: {
+            href() {
+                return '/teams/' + this.team.id;
             }
         },
 

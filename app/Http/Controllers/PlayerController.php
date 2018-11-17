@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PlayersExport;
+use App\Exports\PlayersImport;
 
 class PlayerController extends Controller
 {
@@ -90,5 +93,15 @@ class PlayerController extends Controller
     public function destroy(Player $player)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new PlayersExport, 'players.xlsx');
+    }
+
+    public function import()
+    {
+        return Excel::import(new PlayersImport, 'players.xlsx');
     }
 }

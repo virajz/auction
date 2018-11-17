@@ -19,8 +19,6 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="flex" id="app">
-            @yield('content')
-        </div>
+        @yield('content')
     </body>
 </html>

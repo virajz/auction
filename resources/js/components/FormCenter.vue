@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-1 center">
+    <div class="center-form flex flex-1 center">
         <div class="form">
             <div>
                 <label for="player">Selected Player</label>
